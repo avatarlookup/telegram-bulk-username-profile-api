@@ -1,0 +1,87 @@
+{
+  "name": "Telegram Bulk Username Profile",
+  "brand": "AvatarLookup",
+  "repository": "avatarlookup/telegram-bulk-username-profile-api",
+  "description": "Upload Telegram usernames and download the profile data, avatar included.",
+  "official_site": "https://avatarlookup.com",
+  "landing_page": "https://avatarlookup.com/products/tg_username_profile_batch",
+  "canonical_docs": "https://avatarlookup.com/api-docs",
+  "base_url": "https://avatarlookup.com",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "mode": "async-bulk",
+  "product": "tg_username_profile_batch",
+  "identifier_kind": "username",
+  "requires_country": false,
+  "endpoints": {
+    "submit": {
+      "method": "POST",
+      "path": "/api/v1/bulk-tasks"
+    },
+    "status": {
+      "method": "GET",
+      "path": "/api/v1/bulk-tasks/{id}"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/api/v1/balance"
+    }
+  },
+  "limits": {
+    "min_items": 1000,
+    "max_items": 100000,
+    "poll_interval_seconds": 30,
+    "file_formats": [
+      "txt",
+      "csv"
+    ]
+  },
+  "result_fields": [
+    {
+      "name": "username",
+      "example": "alexkim",
+      "description": ""
+    },
+    {
+      "name": "activated",
+      "example": "yes",
+      "description": ""
+    },
+    {
+      "name": "uid",
+      "example": "123456789",
+      "description": ""
+    },
+    {
+      "name": "lastseen",
+      "example": "2026-09-17 21:40",
+      "description": ""
+    },
+    {
+      "name": "activedays",
+      "example": "12",
+      "description": ""
+    },
+    {
+      "name": "member",
+      "example": "no",
+      "description": ""
+    },
+    {
+      "name": "avatar_url",
+      "example": "https://example.test/a.jpg",
+      "description": ""
+    }
+  ],
+  "statuses": [
+    "processing",
+    "success",
+    "failed"
+  ],
+  "pricing_url": "https://avatarlookup.com/pricing",
+  "maintainer": "AvatarLookup",
+  "license": "MIT",
+  "last_reviewed": "2026-09-22"
+}
