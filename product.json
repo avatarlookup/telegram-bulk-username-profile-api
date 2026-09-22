@@ -42,37 +42,37 @@
     {
       "name": "username",
       "example": "alexkim",
-      "description": ""
+      "description": "The submitted username (without @)."
     },
     {
       "name": "activated",
       "example": "yes",
-      "description": ""
+      "description": "Whether the username belongs to an existing Telegram account."
     },
     {
       "name": "uid",
       "example": "123456789",
-      "description": ""
+      "description": "Telegram user id."
     },
     {
       "name": "lastseen",
       "example": "2026-09-17 21:40",
-      "description": ""
+      "description": "The most recent online time observed."
     },
     {
       "name": "activedays",
       "example": "12",
-      "description": ""
+      "description": "Days since that activity — smaller is more recent."
     },
     {
       "name": "member",
       "example": "no",
-      "description": ""
+      "description": "Whether the account has Telegram Premium."
     },
     {
       "name": "avatar_url",
       "example": "https://example.test/a.jpg",
-      "description": ""
+      "description": "Avatar URL, empty when the account has none."
     }
   ],
   "statuses": [

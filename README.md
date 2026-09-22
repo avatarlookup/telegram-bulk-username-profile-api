@@ -20,13 +20,13 @@ This is the official AvatarLookup example repository for **one** bulk product, `
 
 | Column | Example | Meaning |
 |---|---|---|
-| `username` | `alexkim` |  |
-| `activated` | `yes` |  |
-| `uid` | `123456789` |  |
-| `lastseen` | `2026-09-17 21:40` |  |
-| `activedays` | `12` |  |
-| `member` | `no` |  |
-| `avatar_url` | `https://example.test/a.jpg` |  |
+| `username` | `alexkim` | The submitted username (without @). |
+| `activated` | `yes` | Whether the username belongs to an existing Telegram account. |
+| `uid` | `123456789` | Telegram user id. |
+| `lastseen` | `2026-09-17 21:40` | The most recent online time observed. |
+| `activedays` | `12` | Days since that activity — smaller is more recent. |
+| `member` | `no` | Whether the account has Telegram Premium. |
+| `avatar_url` | `https://example.test/a.jpg` | Avatar URL, empty when the account has none. |
 
 The result is a **point-in-time signal**, not a verdict, and not identity data. It describes what the provider reported at the moment the task ran.
 
