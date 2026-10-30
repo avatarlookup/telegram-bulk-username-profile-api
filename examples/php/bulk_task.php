@@ -3,14 +3,15 @@ $key = getenv('AVATARLOOKUP_API_KEY');
 if (!$key) {
     throw new Exception('Set AVATARLOOKUP_API_KEY');
 }
-$curl = curl_init('https://avatarlookup.com/api/v1/bulk-tasks');
+$base = rtrim(getenv('API_BASE_URL') ?: 'https://avatarlookup.com', '/');
+$curl = curl_init($base.'/api/v1/bulk-tasks');
 curl_setopt_array($curl, [
     CURLOPT_POST => true,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HTTPHEADER => ['X-API-Key: '.$key],
     CURLOPT_POSTFIELDS => [
-        'product' => 'tg_username_profile_batch',
-        'file' => new CURLFile('usernames.txt'),
+        'service_type' => 'tg_username_profile_batch',
+        'file' => new CURLFile(getenv('FILE') ?: 'examples/usernames.txt'),
     ],
 ]);
 $response = curl_exec($curl);
